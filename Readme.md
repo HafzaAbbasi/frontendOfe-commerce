@@ -20,7 +20,7 @@ ECOMMERCE-WEBSITE/
   │   └── (product & blog images)
   ├── index.html
   ├── style.css
-  ├── java.js
+  ├── javascript.js
   └── README.md
 ```
 
