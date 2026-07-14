@@ -1,5 +1,3 @@
-// 
-
 const header = document.querySelector("header");
 const menu = document.querySelector('#menu-icon');
 const navmenu = document.querySelector('.navmenu');
