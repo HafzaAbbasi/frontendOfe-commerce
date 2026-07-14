@@ -3,7 +3,7 @@
 A fully responsive ecommerce landing page built with HTML, CSS, and JavaScript. It features a sticky navbar, mobile hamburger menu, trending products grid, client reviews, blog/news updates, and a footer contact section — optimized for mobile, tablet, and desktop screens.
 #
 ## ✨Live Demo
- 🔗 Add your live link here
+ 🔗 https://frontend-ofe-commerce.vercel.app/
 
 ## 📌Tech Stack
 - HTML5
