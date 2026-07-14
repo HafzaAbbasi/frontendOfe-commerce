@@ -61,6 +61,11 @@ header{
     cursor: pointer;
 }
 
+/* Hide hamburger icon on desktop/tablet by default; shown only on mobile via media query below */
+.nav-icon #menu-icon{
+    display: none;
+}
+
 section{
     /* border: 1px solid black; */
     padding: 5% 10%; 
@@ -73,6 +78,7 @@ section{
     background-image: url(image/banner-3.png);
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     display: grid;
     grid-template-columns: repeat(1,1fr);
     align-items: center;
@@ -346,30 +352,65 @@ header.sticky{
     text-transform: capitalize;
 }
 
-/* Responsive css */
+/* ============================================= */
+/* Responsive css                                 */
+/* ============================================= */
+
+/* ---------- Tablet (max-width: 1024px) ---------- */
+@media(max-width: 1024px){
+    .main-home{
+        background-position: 70% center;
+    }
+    .main-text h1{
+        font-size: 55px;
+    }
+    .products{
+        grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    }
+    .update-cart{
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    }
+    .cart img{
+        width: 100%;
+    }
+}
+
+/* ---------- Small tablet / large mobile (max-width: 890px) ---------- */
 @media(max-width:890px){
     header{
         padding: 20px 3%;
         transition: .4s;
     }
 }
-@media(max-width:630px){
-    .main-text h1{
-        font-size: 50px;
-        transition: .4s ;
-    }
 
-    .main-text p{
-        font-size: 18px;
-        transition: .4s;
-    }
-    .main-btn{
-        padding: 10px 20px;
-        transition: .4s;
-    }
-}
-
+/* ---------- Mobile nav toggle (max-width: 750px) ---------- */
 @media(max-width:750px){
+    .nav-icon #menu-icon{
+        display: block;
+    }
+
+    /* Hero section fixes for tablet/mobile */
+    .main-home{
+        height: 100svh;
+        min-height: 500px;
+        padding: 0 6%;
+        text-align: center;
+        justify-items: center;
+        background-position: 65% center;
+        background-attachment: scroll;
+    }
+    .main-text h1{
+        font-size: 42px;
+    }
+    .main-text p{
+        font-size: 17px;
+    }
+    .down-arrow{
+        right: 50%;
+        transform: translateX(50%);
+        top: 90%;
+    }
+
     .navmenu{
         position: absolute;
         top: 100%;
@@ -391,4 +432,43 @@ header.sticky{
     .navmenu.open{
         right: 0;
     } 
+
+    .contact-info{
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        text-align: center;
+    }
+    .first-info img{
+        margin: 0 auto;
+    }
+}
+
+/* ---------- Small mobile (max-width: 630px) ---------- */
+@media(max-width:630px){
+    .main-text h1{
+        font-size: 32px;
+        transition: .4s ;
+    }
+
+    .main-text p{
+        font-size: 16px;
+        transition: .4s;
+    }
+    .main-btn{
+        padding: 10px 20px;
+        font-size: 14px;
+        transition: .4s;
+    }
+
+    .down-arrow{
+        display: none;
+    }
+    .products{
+        grid-template-columns: 1fr;
+    }
+    .cart{
+        text-align: center;
+    }
+    .cart p{
+        max-width: 100%;
+    }
 }
